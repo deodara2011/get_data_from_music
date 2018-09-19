@@ -6,7 +6,6 @@ public class AutoBoxTest {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        //test
         Integer a = 1;
         Integer b = 2;
         Integer c = 3;
