@@ -10,8 +10,8 @@ import cma.cimiss.client.DataQueryClient;
 import data.util.Configurator;
 
 public abstract class AbstractDataGetter {
-    private final static String USER_ID = Configurator.getProperty("userName");
-    private final static  String PASSWORD = Configurator.getProperty("password");
+    protected  static String USER_ID ;
+    protected  static  String PASSWORD;
     
     private DataQueryClient   client;
     /* 2.2 接口ID */
@@ -113,6 +113,7 @@ public abstract class AbstractDataGetter {
                     writer.write(","+line[i]);
                 writer.newLine();
             }
+            writer.flush();
         }catch(Exception e){
             e.printStackTrace();
         }

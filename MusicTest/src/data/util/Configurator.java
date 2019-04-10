@@ -22,21 +22,22 @@ public class Configurator {
 		if(properties==null){
 			synchronized(Configurator.class){
 				if(properties==null){
-					init();
+					init(CONFIG_FILE_NAME);
 				}
 			}
 		}
 		return properties;
 	}
-	private static boolean init(){
+	public static boolean init(String fileName){
 		//InputStream inputStream=null;
 		properties=new Properties();
-		/*
+		
 		try(InputStreamReader inputStream=new InputStreamReader(
 				new FileInputStream(fileName), "UTF-8")) {
-				*/
+		/*		
 		try(InputStreamReader inputStream=new InputStreamReader(
 		        Configurator.class.getResourceAsStream(CONFIG_FILE_NAME), "UTF-8")) {
+		        */
 			properties.load(inputStream);
 			return true;
 		} catch (IOException e) {
